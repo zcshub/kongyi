@@ -4,11 +4,14 @@
 <div class="col-md-4 col-md-offset-4">
 	{!! Form::open(['url'=>'password/reset']) !!}
 		<div class="form-group">
+			{!! Form::input('hidden', 'token', $token) !!}
+		</div>
+		<div class="form-group">
 			{!! Form::label('email', '邮箱') !!}
 			{!! Form::email('email', old('email'), ['class'=>'form-control']) !!}
 		</div>
 		<div class="form-group">
-			{!! Form::label('password', '密码') !!}
+			{!! Form::label('password', '新密码') !!}
 			{!! Form::password('password', ['class'=>'form-control']) !!}
 		</div>
 		<div class="form-group">
