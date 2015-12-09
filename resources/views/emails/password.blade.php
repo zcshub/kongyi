@@ -1,1 +1,3 @@
-Click here to reset your password: {{ url('password/reset/'.$token) }}
+<div>
+	{!! Html::link(url('password/reset/'.$token), 'Click here to reset your password', []) !!}
+</div>
