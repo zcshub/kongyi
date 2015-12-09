@@ -2,7 +2,7 @@
 @section('content')
 
 <div class="col-md-4 col-md-offset-4">
-	{!! Form::open(['url'=>'password/email']) !!}
+	{!! Form::open(['url'=>'password/reset']) !!}
 		<div class="form-group">
 			{!! Form::label('email', '邮箱') !!}
 			{!! Form::email('email', old('email'), ['class'=>'form-control']) !!}
