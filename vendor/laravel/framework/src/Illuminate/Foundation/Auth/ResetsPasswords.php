@@ -10,7 +10,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 trait ResetsPasswords
 {
-    protected $redirectPath = 'home';
+    protected $redirectPath = '/home';
     /**
      * Display the form to request a password reset link.
      *
