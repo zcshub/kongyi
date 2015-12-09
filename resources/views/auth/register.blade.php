@@ -5,12 +5,12 @@
 	{!! Form::open(['method'=>'POST', 'url'=>'auth/register']) !!}
 
 		<div class="form-group">
-			{!! Form::label('name', 'Name') !!}
-			{!! Form::text('name', null, ['class'=>'form-control']) !!}
+			{!! Form::label('name', '昵称') !!}
+			{!! Form::text('name', old('name'), ['class'=>'form-control']) !!}
 		</div>
 		<div class="form-group">
-			{!! Form::label('email', 'E-mail') !!}
-			{!! Form::email('email', null, ['class'=>'form-control']) !!}
+			{!! Form::label('email', '邮箱') !!}
+			{!! Form::email('email', old('email'), ['class'=>'form-control']) !!}
 		</div>
 		<div class="form-group">
 			{!! Form::label('password', 'Password') !!}

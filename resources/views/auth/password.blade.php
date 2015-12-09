@@ -4,7 +4,7 @@
 <div class="col-md-4 col-md-offset-4">
 	{!! Form::open(['url'=>'password/email']) !!}
 		<div class="form-group">
-			{!! Form::label('email', 'E-mail') !!}
+			{!! Form::label('email', '邮箱') !!}
 			{!! Form::email('email', old('email'), ['class'=>'form-control']) !!}
 		</div>
 		<div class="form-group">

@@ -6,14 +6,14 @@
 
 		<div class="form-group">
 			{!! Form::label('email', 'E-mail') !!}
-			{!! Form::email('email', null, ['class'=>'form-control']) !!}
+			{!! Form::email('email', old('email'), ['class'=>'form-control']) !!}
 		</div>
 		<div class="form-group">
 			{!! Form::label('password', 'Password') !!}
 			{!! Form::password('password', ['class'=>'form-control']) !!}
 		</div>
 		<div class="form-group">
-			{!! Form::checkbox('remember', 0, null, []) !!}
+			{!! Form::checkbox('remember') !!}
 			{!! Form::label('remember', 'Remember me') !!}
 		</div>
 		<div class="form-group">
