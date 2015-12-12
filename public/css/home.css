@@ -137,5 +137,10 @@ body{
 	90%  {right:0px; transform: rotateY(720deg);}
 	100% {right:0px;}
 }
-
+/*
+timeExplode
+*/
+#time_explode_canvas{
+	
+}
 
