@@ -20,6 +20,7 @@ createNew: function (){
 	const R = Math.round((DW/DN-2)/2);//,小圆边界留1单位空白,R为小圆半径
 	const G = 0.16;
 	const colors = ["#33B5E5","#0099CC","#AA66CC","#9933CC","#99CC00","#669900","#FFBB33","#FF8800","#FF4444","#CC0000"];
+	const MAX = 1000;
 
 	var canvas = document.getElementById(canvasId);
 	canvas.width = W;
@@ -57,6 +58,7 @@ createNew: function (){
 		var cs = showTime.second;
 
 		if(ns != cs){
+			console.log(balls.length);
 			if(parseInt(nh/10) != parseInt(ch/10)){
 				addBalls(parseInt(nh/10), X, Y);
 			}
@@ -82,6 +84,9 @@ createNew: function (){
 
 	function addBalls(sym, x, y)
 	{
+		if(balls.length >= MAX){
+			return;
+		}
 		Object.keys(timeDigit[sym]).forEach(function(line){
 			Object.keys(timeDigit[sym][line]).forEach(function(key){
 				if(timeDigit[sym][line][key] == 1){

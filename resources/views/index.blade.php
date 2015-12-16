@@ -5,15 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @yield('title', '<title>咸鱼馆</title>')
     <!-- css文件 -->
-    <!-- 新 Bootstrap 核心 CSS 文件 -->
-    <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <!-- Bootstrap 核心 CSS 文件 -->
+    <!-- <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
+    {!! Html::style('css/bootstrap.min.css') !!}
     {!! Html::style('css/bootstrap-datetimepicker.min.css') !!}
     {!! Html::style('css/home.css') !!}
     <!-- js文件 -->
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
-    <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-    <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
-    <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    {!! Html::script('js/jquery-1.11.3.min.js') !!}
+    <!-- Bootstrap 核心 JavaScript 文件 -->
+    {!! Html::script('js/bootstrap.min.js') !!}
     @yield('needjs')
 </head>
 <body>
