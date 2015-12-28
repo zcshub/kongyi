@@ -35,7 +35,7 @@
         @yield('article', '<li>')
           {!! HTML::link('article', '文章列表', ['class'=>'glyphicon glyphicon-list-alt']) !!}
         </li>
-        @yield('tab', '<li>')
+        @yield('game', '<li>')
           {!! HTML::link('game', '小游戏展', ['class'=>'glyphicon glyphicon-file']) !!}
         </li>
         @yield('tab', '<li>')
