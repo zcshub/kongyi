@@ -36,13 +36,13 @@
           {!! HTML::link('article', '文章列表', ['class'=>'glyphicon glyphicon-list-alt']) !!}
         </li>
         @yield('tab', '<li>')
-          {!! HTML::link('article', '叉叉无敌', ['class'=>'glyphicon glyphicon-file']) !!}
+          {!! HTML::link('game', '小游戏展', ['class'=>'glyphicon glyphicon-file']) !!}
         </li>
         @yield('tab', '<li>')
-          {!! HTML::link('article', '叉叉无敌', ['class'=>'glyphicon glyphicon-file']) !!}
+          {!! HTML::link('', '空即是色', ['class'=>'glyphicon glyphicon-file']) !!}
         </li>
         @yield('tab', '<li>')
-          {!! HTML::link('article', '叉叉无敌', ['class'=>'glyphicon glyphicon-file']) !!}
+          {!! HTML::link('', '色即是空', ['class'=>'glyphicon glyphicon-file']) !!}
         </li>
       </ul>
       @if(Auth::user() == null)

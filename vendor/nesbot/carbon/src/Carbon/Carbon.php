@@ -19,6 +19,7 @@ use InvalidArgumentException;
 use Symfony\Component\Translation\Translator;
 use Symfony\Component\Translation\TranslatorInterface;
 use Symfony\Component\Translation\Loader\ArrayLoader;
+use Illuminate\Support\Facades\Lang;
 
 /**
  * A simple API extension for DateTime
@@ -2190,37 +2191,37 @@ class Carbon extends DateTime
 
         switch (true) {
             case ($diffInterval->y > 0):
-                $unit = 'year';
+                $unit = Lang::get('time.year');
                 $count = $diffInterval->y;
                 break;
 
             case ($diffInterval->m > 0):
-                $unit = 'month';
+                $unit = Lang::get('time.month');
                 $count = $diffInterval->m;
                 break;
 
             case ($diffInterval->d > 0):
-                $unit = 'day';
+                $unit = Lang::get('time.day');
                 $count = $diffInterval->d;
                 if ($count >= self::DAYS_PER_WEEK) {
-                    $unit = 'week';
+                    $unit = Lang::get('time.week');
                     $count = (int) ($count / self::DAYS_PER_WEEK);
                 }
                 break;
 
             case ($diffInterval->h > 0):
-                $unit = 'hour';
+                $unit = Lang::get('time.hour');
                 $count = $diffInterval->h;
                 break;
 
             case ($diffInterval->i > 0):
-                $unit = 'minute';
+                $unit = Lang::get('time.minute');
                 $count = $diffInterval->i;
                 break;
 
             default:
                 $count = $diffInterval->s;
-                $unit = 'second';
+                $unit = Lang::get('time.second');
                 break;
         }
 
@@ -2236,7 +2237,8 @@ class Carbon extends DateTime
 
         $isFuture = $diffInterval->invert === 1;
 
-        $transId = $isNow ? ($isFuture ? 'from_now' : 'ago') : ($isFuture ? 'after' : 'before');
+        $transId = $isNow ? ($isFuture ? Lang::get('time.from_now') : Lang::get('time.ago')) 
+                            : ($isFuture ? Lang::get('time.after') : Lang::get('time.before'));
 
         // Some langs have special pluralization for past and future tense.
         $tryKeyExists = $unit.'_'.$transId;

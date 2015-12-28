@@ -34,6 +34,7 @@ Route::group(['namespace' => 'Auth'], function(){
 });
 
 Route::resource('article', 'Article\ArticleController');
+Route::resource('game', 'Game\GameController');
 
 Route::get('test', function(){
 	dd(Auth::user());

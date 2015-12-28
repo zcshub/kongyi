@@ -3,6 +3,7 @@
 */
 a{text-decoration: none;}   
 a:hover{text-decoration:none;}
+.panel-footer{padding:5px;height:30px;font-size:16px;background-color:white;}
 /*
 因为导航栏是固定顶部的，
 防止与内容交叉，
@@ -50,13 +51,13 @@ body{
 	background: none;
 }
 .navbar .navbar-toggle{
-	background: rgba(240, 0, 0, 0.9);
+	background: rgba(52,24,65,0.9);
 }
 .navbar .navbar-toggle .icon-bar{
 	display: block;
 	height: 2px;
 	width: 20px;
-	background: rgba(255, 255, 255, 0.9);
+	background: rgba(167, 226, 82, 0.9);
 }
 /*
 用户信息圆
@@ -138,9 +139,25 @@ body{
 	100% {right:0px;}
 }
 /*
-timeExplode
+article
 */
-#time_explode_canvas{
+.article{
 	
+}
+.article-title{
+	font-weight: bold;
+	font-size: 24px;
+	display: inline-block;
+	width: 100%;
+	text-overflow:ellipsis;
+	white-space:nowrap;
+	overflow:hidden;
+}
+.article-preview{
+	max-height: 100px;
+	overflow:hidden;
+}
+.article-update-at{
+	float: right;
 }
 
