@@ -9,7 +9,7 @@ class Article extends Model
 {
 	protected $tables = 'articles';
 
-	protected $fillable = ['publish_at', 'title', 'content', 'tag'];
+	protected $fillable = ['publish_at', 'title', 'content', 'html_content', 'tag'];
 
 	protected $dates = ['publish_at'];
 

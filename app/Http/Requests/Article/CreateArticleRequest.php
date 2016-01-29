@@ -26,7 +26,8 @@ class CreateArticleRequest extends Request
         $rules = [
             'title' => 'required | max:20',
             'publish_at' => 'required',
-            'content' => 'required'
+            'content' => 'required',
+            'html_content' => 'required'
         ];
         return $rules;
     }

@@ -3,7 +3,7 @@
 @section('content')
 	<h1>重新编辑文章</h1>
 	{!! Form::model($article, ['method'=>'PATCH', 'url'=>'article/'.$article->id, 'role'=>'form']) !!}
-
+	
 	@include('article.articleform')
 
 	<div class="form-group">
