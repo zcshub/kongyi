@@ -5,7 +5,7 @@
 				{!! Form::label('title', 'Title') !!}
 			</div>
 			<div class='col-sm-6'>
-				{!! Form::text('title', null, ['class'=>'form-control', id='title','placeholder'=>'文章标题']) !!}
+				{!! Form::text('title', null, ['class'=>'form-control', 'id'=>'title', 'placeholder'=>'文章标题']) !!}
 			</div>
 			<div class="col-sm-1">
 				{!! Form::label('publish_time', 'Publish Time') !!}
