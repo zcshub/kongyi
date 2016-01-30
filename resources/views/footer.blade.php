@@ -1,10 +1,10 @@
-<footer>
+<footer class="col-md-8 col-md-offset-2 footer">
 	<div>
 		
 	</div>
 	<div class="footer_bottom">
-		<p class="pull-left"></p>
+		<p class="pull-left">{{Lang::get('info.developed')}}</p>
 		<p class="text-center"></p>
-		<p class="pull-right"></p>
+		<p class="pull-right">{{Lang::get('info.server')}}</p>
 	</div>
 </footer>

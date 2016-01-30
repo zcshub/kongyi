@@ -16,6 +16,7 @@ a.toparent{
     target:expression(this.target=’_parent’) 
 }
 .panel-footer{padding:5px;height:30px;font-size:16px;background-color:white;}
+footer{margin-bottom: 1em;}
 /*
 因为导航栏是固定顶部的，
 防止与内容交叉，
@@ -149,6 +150,26 @@ body{
 	45%  {right:20%; width:100px;height:100px; transform: rotateY(1080deg);}
 	90%  {right:0px; transform: rotateY(720deg);}
 	100% {right:0px;}
+}
+/*
+footer固定到底部
+*/
+html,body{
+	height:100%;
+}
+#wrap{
+	min-height: 100%;
+}
+#main{
+	overflow:auto;
+	padding-bottom:150px; /* this needs to be bigger than footer height*/
+}
+.footer {
+  position: relative;
+  margin-top: -50px; /* negative value of footer height */
+  height: 50px;
+  clear:both;
+  padding-top:20px;
 }
 /*
 article

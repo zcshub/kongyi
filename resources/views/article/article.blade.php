@@ -5,7 +5,7 @@
 <script>
 	$(document).ready(function() {
 	    //为超链接加上target='_blank'属性
-		$('a[href^="http"]').each(function() {
+		$('.markdown-html a[href^="http"]').each(function() {
 			$(this).attr('target', '_blank');
 		});
 	});
@@ -19,7 +19,9 @@
 		<span class="label label-success">{{$tag}}</span>
 		@endforeach
 	</div>
+	<div class="markdown-html">
 	{!! $article->html_content !!}
+	</div>
 </div>
 
 

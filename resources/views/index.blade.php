@@ -18,70 +18,73 @@
     @yield('needjs')
 </head>
 <body>
+<div id="wrap">
+<div id="main">
+  <nav class="navbar navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#target-navbar-collapse">
+          <span class="sr-only">展开菜单</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        {!! HTML::link('home', '咸鱼馆', ['class'=>'navbar-brand logo']) !!}
+      </div>
+      <div class="collapse navbar-collapse" id="target-navbar-collapse">
+        <ul class="nav navbar-nav navbar-main">
+          @yield('article', '<li>')
+            {!! HTML::link('article', '文章列表', ['class'=>'glyphicon glyphicon-list-alt']) !!}
+          </li>
+          @yield('game', '<li>')
+            {!! HTML::link('game', '小游戏展', ['class'=>'glyphicon glyphicon-file']) !!}
+          </li>
+          @yield('tab', '<li>')
+            {!! HTML::link('', '空即是色', ['class'=>'glyphicon glyphicon-file']) !!}
+          </li>
+          @yield('tab', '<li>')
+            {!! HTML::link('', '色即是空', ['class'=>'glyphicon glyphicon-file']) !!}
+          </li>
+        </ul>
+        @if(Auth::user() == null)
+        <ul class="nav navbar-nav navbar-right">
+          <li>{!! HTML::link('auth/login', '登陆') !!}</li>
+          <li>{!! HTML::link('auth/register', '注册') !!}</li>
+        </ul>
+        @endif
+      </div>
+    </div>
+  </nav>
 
-<nav class="navbar navbar-fixed-top" role="navigation">
-  <div class="container">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#target-navbar-collapse">
-        <span class="sr-only">展开菜单</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      {!! HTML::link('home', '咸鱼馆', ['class'=>'navbar-brand logo']) !!}
+  @if(Auth::user() != null)
+  <div class="user">
+    <div class="user-circle">
+      {!! Html::image('img/default.jpg', null, ['class'=>'img-circle img-responsive img-thumbnail'], null) !!}
     </div>
-    <div class="collapse navbar-collapse" id="target-navbar-collapse">
-      <ul class="nav navbar-nav navbar-main">
-        @yield('article', '<li>')
-          {!! HTML::link('article', '文章列表', ['class'=>'glyphicon glyphicon-list-alt']) !!}
-        </li>
-        @yield('game', '<li>')
-          {!! HTML::link('game', '小游戏展', ['class'=>'glyphicon glyphicon-file']) !!}
-        </li>
-        @yield('tab', '<li>')
-          {!! HTML::link('', '空即是色', ['class'=>'glyphicon glyphicon-file']) !!}
-        </li>
-        @yield('tab', '<li>')
-          {!! HTML::link('', '色即是空', ['class'=>'glyphicon glyphicon-file']) !!}
-        </li>
-      </ul>
-      @if(Auth::user() == null)
-      <ul class="nav navbar-nav navbar-right">
-        <li>{!! HTML::link('auth/login', '登陆') !!}</li>
-        <li>{!! HTML::link('auth/register', '注册') !!}</li>
-      </ul>
-      @endif
+    <div class="user-info">
+      <div class="dropdown">
+        <a href="#" id="user-name" data-toggle="dropdown">{{Auth::user()->name}}</a>
+        <b class="caret"></b>
+        <ul class="dropdown-menu">
+          <li>
+            <a href="user/profile">
+              <span class="glyphicon glyphicon-user">个人资料</span>
+            </a>
+          </li>
+          <li>
+            <a href="auth/logout">
+              <span class="glyphicon glyphicon-log-out">注销用户</span>
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
-</nav>
+  @endif
 
-@if(Auth::user() != null)
-<div class="user">
-  <div class="user-circle">
-    {!! Html::image('img/default.jpg', null, ['class'=>'img-circle img-responsive img-thumbnail'], null) !!}
-  </div>
-  <div class="user-info">
-    <div class="dropdown">
-      <a href="#" id="user-name" data-toggle="dropdown">{{Auth::user()->name}}</a>
-      <b class="caret"></b>
-      <ul class="dropdown-menu">
-        <li>
-          <a href="user/profile">
-            <span class="glyphicon glyphicon-user">个人资料</span>
-          </a>
-        </li>
-        <li>
-          <a href="auth/logout">
-            <span class="glyphicon glyphicon-log-out">注销用户</span>
-          </a>
-        </li>
-      </ul>
-    </div>
-  </div>
+  @yield('content')
 </div>
-@endif
-
-@yield('content')
-
+</div>
+@extends('footer')
 </body>
 </html>

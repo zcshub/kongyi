@@ -16,7 +16,7 @@
 		</div>
 		<div class="panel-footer">
 			<span class="glyphicon glyphicon-tag" style="color: rgb(255, 140, 60); font-size: 14px;">{{$article->tag}}</span>
-			<span class="article-update-at">{{$article->updated_at->diffForHumans()}}</span>
+			<span class="article-update-at">{{Lang::get('time.last_update')}}{{$article->updated_at->diffForHumans()}}</span>
 		</div>
 	</div>
 </div>
