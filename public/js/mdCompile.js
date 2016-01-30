@@ -4,8 +4,10 @@
 	return html;
 }
 function onCompile(){
-	var text = document.getElementById("content").value;
+	var obj = document.getElementById("content");
+	var text = obj.value;
 	var html = compile(text);
 	document.getElementById("html_content").value = html;
 	document.getElementById("view_content").innerHTML = html;
+	obj.style.height = obj.scrollHeight + 'px';
 }
