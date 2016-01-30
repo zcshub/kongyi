@@ -53,7 +53,8 @@ class ArticleController extends Controller
     public function show($id)
     {
         $article = Article::findOrFail($id);
-        return view('article.article', compact('article'));
+        $tags = explode(" ", $article->tag);
+        return view('article.article', compact('article', 'tags'));
     }
 
     /**
