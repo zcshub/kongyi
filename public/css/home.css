@@ -3,6 +3,18 @@
 */
 a{text-decoration: none;}   
 a:hover{text-decoration:none;}
+a.toblank{ 
+    target:expression(this.target=’_blank’) 
+} 
+a.totop{ 
+    target:expression(this.target=’_top’) 
+} 
+a.toself{ 
+    target:expression(this.target=’_self’) 
+} 
+a.toparent{ 
+    target:expression(this.target=’_parent’) 
+}
 .panel-footer{padding:5px;height:30px;font-size:16px;background-color:white;}
 /*
 因为导航栏是固定顶部的，
