@@ -1,3 +1,9 @@
+<script>
+	window.onload = function() {
+		onCompile();
+	}
+</script>
+
 <div class="container">
 	<div class="form-group">
 		<div class="row">

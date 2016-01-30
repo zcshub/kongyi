@@ -1,4 +1,5 @@
-;function compile(content){
+;
+function compile(content){
 	var converter = new showdown.Converter();
 	var html = converter.makeHtml(content);
 	return html;
