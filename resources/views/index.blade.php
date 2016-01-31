@@ -67,14 +67,10 @@
         <b class="caret"></b>
         <ul class="dropdown-menu">
           <li>
-            <a href="user/profile">
-              <span class="glyphicon glyphicon-user">个人资料</span>
-            </a>
+            {!! Html::link('user/profile', '个人资料', ['class'=>'glyphicon glyphicon-user']) !!}
           </li>
           <li>
-            <a href="auth/logout">
-              <span class="glyphicon glyphicon-log-out">注销用户</span>
-            </a>
+            {!! Html::link('auth/logout', '注销用户', ['class'=>'glyphicon glyphicon-log-out']) !!}
           </li>
         </ul>
       </div>

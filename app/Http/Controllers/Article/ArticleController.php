@@ -11,6 +11,11 @@ use App\Http\Requests\Article\CreateArticleRequest;
 
 class ArticleController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('owner', ['only'=>['create', 'store', 'edit', 'update']]);
+    }
+
     /**
      * Display a listing of the resource.
      *

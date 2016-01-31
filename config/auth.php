@@ -64,4 +64,8 @@ return [
         'expire' => 60,
     ],
 
+    'owner' => [
+        env('OWNER0'),
+    ],
+
 ];

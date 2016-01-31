@@ -1,4 +1,4 @@
-@extends('home')
+@extends('index')
 
 @section('needjs')
     {!! Html::script('js/bootstrap-datetimepicker.min.js') !!}
