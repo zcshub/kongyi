@@ -186,10 +186,6 @@ article
 	white-space:nowrap;
 	overflow:hidden;
 }
-.article-preview{
-	max-height: 100px;
-	overflow:hidden;
-}
 .article-update-at{
 	float: right;
 }

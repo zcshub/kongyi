@@ -12,6 +12,6 @@ return array(
     'from_now'  => ':time距现在',
     'after'     => ':time后',
     'before'    => ':time前',
-    'last_update'   =>  '最后更新于',
+    'last_update'   =>  '有更新',
     'create_at' =>  '创建于',
 );
