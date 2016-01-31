@@ -11,11 +11,14 @@
 		</div>
 		<div class="panel-body">
 			<div class="article-preview">
-				{!!$article->html_content!!}
+				<p>
+				{!! str_limit(strip_tags($article->html_content), 380) !!}
+				{!! Html::link(url('article', $article->id), Lang::get('article.read_all'), ['class'=>'btn btn-primary btn-xs more-link']) !!}
+				</p>
 			</div>
 		</div>
 		<div class="panel-footer">
-			<span class="glyphicon glyphicon-tag" style="color: rgb(255, 140, 60); font-size: 14px;">{{$article->tag}}</span>
+			<span class="glyphicon glyphicon-tag" style="color: rgb(255, 140, 60); font-size: 14px;"> {{$article->tag}}</span>
 			<span class="article-update-at">{{Lang::get('time.last_update')}}{{$article->updated_at->diffForHumans()}}</span>
 		</div>
 	</div>
