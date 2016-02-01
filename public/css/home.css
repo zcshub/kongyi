@@ -15,7 +15,7 @@ a.toself{
 a.toparent{ 
     target:expression(this.target=’_parent’) 
 }
-.panel-footer{padding:5px;height:30px;font-size:16px;background-color:white;}
+.panel-footer{padding:0.2em;height:2em;font-size:1em;background-color:white;}
 footer{margin-bottom: 1em;}
 /*
 因为导航栏是固定顶部的，
@@ -23,90 +23,70 @@ footer{margin-bottom: 1em;}
 给body添加一个导航栏高度的内边距
 */
 body{
-	padding-top: 54px;
+	padding-top: 4em;
 }
 /*
 导航栏格式
 */
-.navbar{
-	background: rgba(52,24,65,0.9);
+nav{
+	background-color:rgba(52,24,65,0.9);
 }
 .navbar .logo{
-	font-size: 40px;
-	line-height: 25px;
-	margin-right: 40px;
+	font-size: 2em;
 	color:rgba(167,226,82,0.9);
 }
-.navbar-main{
+.navbar-nav{
 	list-style: none;
 }
-.navbar-main > li{
-	padding-left: 10px;
-	padding-right: 10px;
+.navbar-nav > li{
+	padding-top: 0;
 }
-.navbar-main > li > a{
-	font-size: 20px;
+.navbar-nav>li>a{
+	font-size: 1.2em;
 	color: rgba(248,246,233,0.9);
-	display: block;
 }
-.navbar-main > li > a:hover{
-	color: rgba(231,14,145,0.9);
-	background: none;
-}
-.navbar-main .active > a, .navbar-main .active > a:hover{
-	color: rgba(231,14,145,0.9);
+.navbar-nav > li > a:hover, .navbar-nav .active > a:hover{
+	color: rgba(167,226,82,0.9);
+	background-color:transparent;
 }
 .navbar-right > li > a{
+	font-family: Cursive;
 	color: rgba(248,246,233,0.9);
 }
-.navbar-right > li > a:hover{
-	color: rgba(231,14,145,0.9);
-	background: none;
+.navbar-right > li > a:hover, .navbar-right > li > a:focus{
+	font-family: Serif;
 }
 .navbar .navbar-toggle{
 	background: rgba(52,24,65,0.9);
 }
 .navbar .navbar-toggle .icon-bar{
 	display: block;
-	height: 2px;
-	width: 20px;
-	background: rgba(167, 226, 82, 0.9);
+	height: 0.15em;
+	width: 1.25em;
+	background-color: rgba(167, 226, 82, 0.9);
 }
 /*
 用户信息圆
 */
-.user{
-	position: fixed;
-	right:60px;
-	top:2px;
-	height: 64px;
-	z-index: 9999;
+.navbar-nav>.dropdown>a{
+	padding:0;
+	padding-right:0.5em;
 }
 .user-circle{
-	position: absolute;
-	right: 0;
-	width: 64px;
-	height: 64px;
-	z-index: 1;
+	width: 50px;
+	height: 50px;
+	/*
 	animation: userCircle 3s;
 	-webkit-animation: userCircle 3s;  Safari and Chrome 
 	transition: transform 0.8s;
-	-webkit-transition: transform 0.8s; /* Safari */
+	-webkit-transition: transform 0.8s; *//* Safari */
+
 }
 .user-circle:hover{
 	transform: rotate(360deg);
 	-webkit-transform: rotate(360deg);
 }
-.user-info{
-	position: relative;
-	margin-right: 64px;
-	margin-top: 24px;
-	font-size: 16px;
-	color: rgba(248,246,233,0.9);
-	line-height: 16px;
-	z-index: 0;
-}
-#user-name{
+.user-name{
 	display: inline-block;
 	width: 100px;
 	text-align: right;
@@ -115,23 +95,24 @@ body{
 	white-space:nowrap;
 	overflow:hidden;
 }
-.user-info .dropdown:hover .dropdown-menu{
+.dropdown:hover .dropdown-menu{
 	display: block;
+	margin-top: 0; // remove the gap so it doesn't close
 }
-.user-info .dropdown-menu{
-	width: 100px;
-	-moz-box-shadow: 0 2px 1px rgba(52,24,65,0.9);
-	-webkit-box-shadow: 0 2px 1px rgba(52,24,65,0.9);
-	box-shadow: 0 2px 1px rgba(52,24,65,0.9);
+.dropdown> a, .dropdown> a:hover, .dropdown> a:focus{
+	background-color:transparent;
 }
-.user-info .dropdown-menu a{
-	color: #889;
+.nav >.open>a:focus, .nav>.open>a:hover, .nav>.open>a{
+	background-color:transparent;
 }
-.user-info .dropdown-menu a:hover{
-	background: #eef;
-	-moz-box-shadow: 0 0 0 rgba(52,24,65,0.9);
-	-webkit-box-shadow: 0 0 0 rgba(52,24,65,0.9);
-	text-shadow: 0 0 0 rgba(52,24,65,0.9);
+.dropdown-menu > li > a{
+	color:rgba(248,246,233,0.9);
+	background-color:rgba(52,24,65,0.6);
+}
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+	color:rgba(167,226,82,0.9);
+	background-image:none !important;
+	background-color:rgba(52,24,65,0.6);
 }
 /*
 开场动画
