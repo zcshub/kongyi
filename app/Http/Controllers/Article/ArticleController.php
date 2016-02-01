@@ -71,7 +71,7 @@ class ArticleController extends Controller
     public function edit($id)
     {
         $article = Article::findOrFail($id);
-        $article->publish_at->setToStringFormat('Y-m-d H:i');
+        $article->publish_at->setToStringFormat('Y-m-d H:i:s');
         $article->publish_at = $article->publish_at->__toString();
         return view('article.editarticle', compact('article'));
     }

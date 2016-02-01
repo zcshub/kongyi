@@ -17,11 +17,11 @@
 				{!! Form::label('publish_time', 'Publish Time') !!}
 			</div>
 			<div class="col-sm-4">
-				<input name="publish_at" size="16" type="text" readonly class="form_datetime" value="2015-10-21 17:22">
+				<input name="publish_at" size="20" type="text" readonly class="form_datetime" value= "{!! \Carbon\Carbon::now()->toDateTimeString()!!}"/>
 				<script type="text/javascript">
 					$(".form_datetime").datetimepicker({
 						language: "zh-CN",
-	                	format: "yyyy-mm-dd hh:ii"
+	                	format: "yyyy-mm-dd hh:ii:ss"
 					});
 				</script>
 			</div>
