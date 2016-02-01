@@ -45,7 +45,7 @@ nav{
 	font-size: 1.2em;
 	color: rgba(248,246,233,0.9);
 }
-.navbar-nav > li > a:hover, .navbar-nav .active > a:hover{
+.navbar-nav>li>a:hover, .navbar-nav>li>a:focus, .navbar-nav>.active>a:hover{
 	color: rgba(167,226,82,0.9);
 	background-color:transparent;
 }
