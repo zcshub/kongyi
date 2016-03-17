@@ -1,4 +1,6 @@
+
 <div class="make-comment">
+@if(Auth::user())
 	{!! Form::open(['url'=>'comment/make', 'role'=>'form', 'id'=>'makeComment']) !!}
 		<div class="form-group">
 			{!! Form::textarea('content', null, ['class'=>'form-control make-comment-textarea', 'rows'=>3]) !!}
@@ -13,7 +15,15 @@
 	<!-- <a href="#" id="get">Get</a> -->
 	<ul id="error-info" class="list-group">
 	</ul>
+@elseif(Auth::guest())
+   <div class="alert alert-warning">
+      请先登陆，再发表评论
+      {!! Html::link('auth/login', '登陆', ['class'=>'pull-right btn btn-info btn-sm']) !!}
+      {!! Html::link('auth/register', '注册', ['class'=>'pull-right btn btn-link']) !!}
+   </div>
+@endif
 </div>
+
 <script type="text/javascript">
 	$(document).ready(function(){
 		initCommentAbout();
