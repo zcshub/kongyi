@@ -2,7 +2,7 @@
 
 @section('content')
 	<h1>写新文章</h1>
-	{!! Form::open(['url'=>'article', 'role'=>'form']) !!}
+	{!! Form::open(['url'=>'article/store', 'role'=>'form']) !!}
 
 	@include('article.articleform')
 

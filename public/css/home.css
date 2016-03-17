@@ -158,6 +158,10 @@ article
 .article{
 	
 }
+.article-page{
+	padding:1.5em;
+	background-color: rgb(242,235,217);
+}
 .article-title{
 	font-weight: bold;
 	font-size: 24px;
@@ -169,6 +173,45 @@ article
 }
 .article-update-at{
 	float: right;
+}
+/*
+comment
+*/
+.comment-line{
+	padding:1em;
+	background-color: 
+}
+.comment-area-logo{
+	font-size: 2em;
+}
+.article-comment{
+	padding: 2px;
+	margin-top: 0;
+	margin-bottom: 1em;
+	box-shadow: 0 0 2px 2px rgba(52,24,65,0.9);
+}
+.true-inner{
+	border-bottom: 1px double;
+	border-width: 3px;
+	border-bottom-right-radius: 4em 0.5em;
+}
+.inner-article-comment{
+	position:relative;
+	padding:1em;
+	background-image: url('../img/comment.jpg');
+	background-repeat: no-repeat;
+	min-height: 5em;
+}
+.inner-article-comment-content{
+	margin:0;
+}
+.comment-gray{
+	color:gray;
+}
+.yinyong{
+	position:absolute;
+	bottom:1em;
+	left:90%;
 }
 
 

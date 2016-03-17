@@ -33,11 +33,24 @@ Route::group(['namespace' => 'Auth'], function(){
 	Route::post('password/reset', 'PasswordController@postReset');
 });
 
-Route::resource('article', 'Article\ArticleController');
-Route::resource('game', 'Game\GameController');
+Route::group(['namespace' => 'Article'], function(){
+	Route::get('article', 'ArticleController@index');
 
-Route::get('test', function(){
-	dd(Auth::user());
+	Route::get('article/create', 'ArticleController@create');
+	Route::post('article/store', 'ArticleController@store');
+
+	Route::get('article/{id}', 'ArticleController@show');
+	Route::get('article/{id}/edit', 'ArticleController@edit');
+	Route::post('article/{id}', 'ArticleController@update');
+
+	Route::post('comment/make', 'ArticleCommentsController@store');
+
 });
+
+Route::group(['namespace' => 'User'], function(){
+	Route::get('user/profile', 'UserController@index');
+});
+
+
 
 

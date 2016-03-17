@@ -11,7 +11,8 @@
 	});
 </script>
 
-<div class="col-md-8 col-md-offset-2">
+<div class="col-md-8 col-md-offset-2 ">
+	<div class="article-page">
 	<div class="page-header">
 		<h1>{{ $article->title }}</h1>
 		<span class="label label-success">{{$article->publish_at}}</span>
@@ -22,7 +23,9 @@
 	<div class="markdown-html">
 	{!! $article->html_content !!}
 	</div>
+	</div>
 </div>
 
+@include('comment.articlecomment')
 
 @stop

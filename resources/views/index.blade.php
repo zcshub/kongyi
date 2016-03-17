@@ -3,12 +3,15 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     @yield('title', '<title>咸鱼馆</title>')
     <!-- js文件 -->
     <!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
     {!! Html::script('js/jquery-1.11.3.min.js') !!}
     <!-- Bootstrap 核心 JavaScript 文件 -->
     {!! Html::script('js/bootstrap.min.js') !!}
+    <!-- my config -->
+    {!! Html::script('js/config.js') !!}
     <!-- css文件 -->
     <!-- Bootstrap 核心 CSS 文件 -->
     <!-- <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> -->
@@ -55,7 +58,7 @@
         @elseif(Auth::user() != null)
           <li class="dropdown">
               <a href="#" class="dropdown-toggle user" data-toggle="dropdown">
-                {!! Html::image('img/default.jpg', null, ['class'=>'hidden-xs user-circle img-circle img-responsive img-thumbnail'], null) !!}
+                {!! Html::image(url('img/user/', Auth::user()->icon ?:'default.jpg'), null, ['class'=>'hidden-xs user-circle img-circle img-responsive img-thumbnail'], null) !!}
                 {!!str_limit(Auth::user()->name, 10)!!}
                 <b class="caret"></b>
               </a>

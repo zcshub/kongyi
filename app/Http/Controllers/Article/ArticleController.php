@@ -8,6 +8,7 @@ use App\Http\Controllers\Controller;
 use App\Model\Article;
 use Carbon\Carbon;
 use App\Http\Requests\Article\CreateArticleRequest;
+use App\Http\Controllers\Article\ArticleCommentsController;
 
 class ArticleController extends Controller
 {
@@ -59,7 +60,10 @@ class ArticleController extends Controller
     {
         $article = Article::findOrFail($id);
         $tags = explode(" ", $article->tag);
-        return view('article.article', compact('article', 'tags'));
+        $commentData = ArticleCommentsController::index($id);
+        $comments = $commentData["commentsArr"];
+        $hideComments = $commentData["hideComments"];
+        return view('article.article', compact('article', 'tags', 'comments', 'hideComments'));
     }
 
     /**
