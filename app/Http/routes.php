@@ -49,6 +49,7 @@ Route::group(['namespace' => 'Article'], function(){
 
 Route::group(['namespace' => 'User'], function(){
 	Route::get('user/profile', 'UserController@index');
+	Route::post('user/profile/icon', 'UserController@changeIcon');
 });
 
 

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+use Response;
+
 use Auth;
 
 class UserController extends Controller
@@ -20,6 +22,32 @@ class UserController extends Controller
     {
         $user = Auth::user();
         return view('user.profile', compact('user'));
+    }
+
+    public function changeIcon(Request $request)
+    {
+        if($request->ajax())
+        {
+            if($request->newIcon)
+            {
+                $newIcon = $this->parseIconName($request->newIcon);
+                $user = Auth::user();
+                if($newIcon != $user->icon)
+                {
+                    $user->icon = $newIcon;
+                    $user->save();
+                    return Response::json(array('success'=>''));
+                }
+                
+            }
+            
+        }
+    }
+
+    private function parseIconName($str)
+    {
+        $arr = explode('/', $str);
+        return $arr[sizeof($arr)-1];
     }
 
     /**
