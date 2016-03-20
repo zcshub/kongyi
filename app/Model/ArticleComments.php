@@ -25,4 +25,12 @@ class ArticleComments extends Model
     {
         $query->where('id', $id);
     }
+
+    public function scopeCommentsInfoOfArticle($query, $id)
+    {
+        $query->where('article_id', $id)
+              ->newComments()
+              ->leftJoin('users', 'article_comments.user_id', '=', 'users.id')
+              ->select('users.icon', 'users.name', 'article_comments.*');
+    }
 }

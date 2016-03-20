@@ -22,10 +22,11 @@ class ArticleCommentsController extends Controller
      */
     public static function index($id)
     {
-        $comments = ArticleComments::ofArticle($id)->newComments()->get();
+        $commentsInfo = ArticleComments::commentsInfoOfArticle($id)->get();
+
         $commentsArr = [];
         $hideComments = [];
-        foreach ($comments as $comment)
+        foreach ($commentsInfo as $comment)
         {
             $commentsArr[$comment->id] = (object)['comment'=>$comment, 
                                 'pids'=>ArticleCommentsController::parseThread($comment->thread)];

@@ -200,7 +200,7 @@ comment
 	padding:1em;
 	background-image: url('../img/comment.jpg');
 	background-repeat: no-repeat;
-	min-height: 5em;
+	min-height: 6em;
 }
 .inner-article-comment-content{
 	margin:0;

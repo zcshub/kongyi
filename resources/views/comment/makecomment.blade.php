@@ -72,7 +72,7 @@
 			e.preventDefault();
 			$('.make-comment').hide();
 		});
-		$('.article-comment a').click(function(e){
+		$('.article-comment .yinyong a').click(function(e){
 			e.preventDefault();
 			$('.make-comment input[name=parent_id]').val($(this).attr('bb-id'));
 			$('.make-comment').insertAfter($(this).parent().parent());

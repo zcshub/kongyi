@@ -519,4 +519,5 @@ return array(
     'SessionHandlerInterface' => $vendorDir . '/symfony/http-foundation/Resources/stubs/SessionHandlerInterface.php',
     'TestCase' => $baseDir . '/tests/TestCase.php',
     'Text_Template' => $vendorDir . '/phpunit/php-text-template/src/Template.php',
+    'UniqueNameToUsers' => $baseDir . '/database/migrations/2016_03_21_000322_unique_name_to_users.php',
 );

@@ -20,6 +20,7 @@
 			{!! Form::label('password_confirmation', 'Password Confirm') !!}
 			{!! Form::password('password_confirmation', ['class'=>'form-control']) !!}
 		</div>
+		{!! Form::hidden('icon', 'default.jpg', []) !!}
 		{!! Form::submit('注册', ['class'=>'btn btn-primary form-control']) !!}
 
 	{!! Form::close() !!}

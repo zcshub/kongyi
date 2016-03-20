@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\User;
 
 use Response;
 
@@ -13,6 +14,10 @@ use Auth;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        
+    }
     /**
      * Display a listing of the resource.
      *
@@ -42,6 +47,16 @@ class UserController extends Controller
             }
             
         }
+    }
+
+    public function somebody($id)
+    {
+        $somebody = User::find($id);
+        $user = (object)array(
+            'name'=>$somebody->name,
+            'icon'=>$somebody->icon
+            );
+        return view('user.somebody', compact('user'));
     }
 
     private function parseIconName($str)
