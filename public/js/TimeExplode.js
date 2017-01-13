@@ -8,6 +8,7 @@ createNew: function (){
 	var canvasId = arguments[0] ? arguments[0] : 'time_explode_canvas';
 	var W = arguments[1] ? parseInt(arguments[1]) : 800;
 	var H = arguments[2] ? parseInt(arguments[2]) : 400;
+	var Floor = 10;
 	//创建对象，模拟构造
 	var obj = {};
 	//obj.data为public变量
@@ -24,7 +25,7 @@ createNew: function (){
 
 	var canvas = document.getElementById(canvasId);
 	canvas.width = W;
-	canvas.height = H;
+	canvas.height = H + Floor;
 	var context = canvas.getContext('2d');
 
 	var showTime = {
@@ -93,7 +94,7 @@ createNew: function (){
 					var b = new ball();
 					b.x = x+parseInt(key)*(2*R+2)+R+1;
 					b.y = y+parseInt(line)*(2*R+2)+R+1;
-					b.vx = Math.random()>0.8?0.5:-0.5;
+					b.vx = Math.random()>0.8?0.6:-0.7;
 					b.vy = 0;
 					b.color = colors[Math.round(Math.random()*colors.length)];
 					balls.push(b);
@@ -156,10 +157,16 @@ createNew: function (){
 			Object.keys(timeDigit[sym][line]).forEach(function(key){
 				if(timeDigit[sym][line][key] == 1){
 					//context.arc(x,y,r,sAngle,eAngle,counterclockwise);
+					cxt.save();
 					cxt.beginPath();
 					cxt.arc(x+parseInt(key)*(2*R+2)+R+1, y+parseInt(line)*(2*R+2)+R+1, R, 0, 2*Math.PI);
 					cxt.closePath();
+					cxt.shadowColor = 'rgba(52,24,65,0.8)';
+					cxt.shadowBlur = 10;
+					cxt.shadowOffsetX = -2;
+					cxt.shadowOffsetY = 2;
 					cxt.fill();
+					cxt.restore();
 				}
 			});
 		});
@@ -184,6 +191,18 @@ createNew: function (){
 		requestAnimationFrame(animation);
 	}
 	
+	//绘制时钟地板
+	context.rect(0, H, W, Floor-4);
+	context.save();
+	context.shadowColor = 'rgba(52,24,65,0.6)';
+	context.shadowBlur = 2;
+	context.shadowOffsetX = -2;
+	context.shadowOffsetY = 4;
+	context.fillStyle = 'rgba(52,24,65,0.9)';
+	context.fill();
+	context.restore();
+
+	//时钟动画
 	animation();
 
 	return obj;

@@ -18,6 +18,7 @@
     {!! Html::style('css/bootstrap.min.css') !!}
     {!! Html::style('css/bootstrap-datetimepicker.min.css') !!}
     {!! Html::style('css/home.css') !!}
+    @yield('needcss')
     @yield('needjs')
 </head>
 <body>
