@@ -53,6 +53,9 @@ Route::group(['namespace' => 'User'], function(){
 	Route::get('user/{id}', 'UserController@somebody');
 });
 
+Route::group(['namespace' => 'Love'], function(){
+	Route::get('love', 'LoveController@index');
+});
 
 
 

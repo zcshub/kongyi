@@ -9,7 +9,7 @@
 	<div class="hometown">
 		<div class="heart"></div>
 		<div id="heart_top">My Love</div>
-		<div class="city">Click</div>
+		<div class="city">{!! Html::link('love', 'Click', ['target'=>'view_window blank_']) !!}</div>
 		<div id="heart_bottom">darlingyf</div>
 	</div>
 	</div>

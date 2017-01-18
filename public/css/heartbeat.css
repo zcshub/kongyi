@@ -26,7 +26,6 @@
   z-index: 1;
   width: 512px;
   height: 512px;
-  color: #000;
 }
 #heart_top {
   width: 200px;
@@ -43,24 +42,31 @@
 }
 .char1 {
 	transform: rotate(-36deg);
+  color:rgb(82,12,21);
 }
 .char2 {
 	transform: rotate(-24deg);
+  color:rgb(125,22,32);
 }
 .char3 {
 	transform: rotate(-12deg);
+  color:rgb(166,32,40);
 }
 .char4 {
 	transform: rotate(0deg);
+  color:rgb(196,70,62);
 }
 .char5 {
 	transform: rotate(12deg);
+  color:rgb(166,32,40);
 }
 .char6 {
 	transform: rotate(24deg);
+  color:rgb(125,22,32);
 }
 .char7 {
 	transform: rotate(36deg);
+  color:rgb(82,12,21);
 }
 
 
@@ -116,6 +122,12 @@
   margin-top: -80px;
 }
 
+.city > a{
+  color: rgb(200,10,10);
+}
+.city > a:hover{
+  color: rgb(120,10,30);
+}
 
 .heart, .city {
   animation: HEARTBEAT 2.5s infinite;
@@ -165,5 +177,62 @@
   }
 }
 
+a{text-decoration: none;}   
+a:hover{text-decoration:none;}
+.loveBtnPanel{
+  position: fixed;
+  right:20%;
+  top:10%;
+  opacity:1;
+  background-color:rgb(24,28,43);
+  width:5em;
+  visibility: hidden;
+  font-size: 2em;
+  font-weight: bold;
+  text-align: center;
+  display:inline-block;
+}
+.loveBtnPanel:hover {
+  visibility: visible;
+  animation: FADEIN 1s;
+  animation-iteration-count: 1;
+}
+
+#fullScreenBtn{
+  width:100%;
+  height:100%;
+  color:white;
+  cursor:pointer;
+}
+
+.loveBtnPanel
+{
+  animation: FADEOUT 7s;
+  animation-iteration-count: 1;
+}
+
+@keyframes FADEIN {
+  0% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes FADEOUT {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
+}
 
 
