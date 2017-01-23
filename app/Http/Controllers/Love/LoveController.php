@@ -16,7 +16,19 @@ class LoveController extends Controller
      */
     public function index()
     {
-        return view('love.love');
+        $imgs = [];
+        $dir = "img/love/";
+        if(is_dir($dir)) {
+            if($dh = opendir($dir)){
+                while(($file = readdir($dh)) !== false){
+                    if($file != "." && $file != ".." && preg_match("/\.jpg/", $file)){
+                        array_push($imgs, $dir.$file);
+                    }
+                }
+                closedir($dh);
+            }
+        }
+        return view('love.love', compact('imgs'));
     }
 
     /**

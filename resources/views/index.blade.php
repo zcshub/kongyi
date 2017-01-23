@@ -43,7 +43,7 @@
             {!! HTML::link('article', '文章列表', ['class'=>'glyphicon glyphicon-list-alt']) !!}
           </li>
           @yield('game', '<li>')
-            {!! HTML::link('game', '小游戏展', ['class'=>'glyphicon glyphicon-file']) !!}
+            {!! HTML::link('', '小游戏展', ['class'=>'glyphicon glyphicon-file']) !!}
           </li>
           @yield('tab', '<li>')
             {!! HTML::link('', '空即是色', ['class'=>'glyphicon glyphicon-file']) !!}
