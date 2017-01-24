@@ -28,6 +28,9 @@
     </style>
 </head>
 <body id="body">
+	<audio autoplay="autoplay"　loop="loop" hidden>
+		<source src="media/loveisyou.mp3" />
+	</audio>
 	<div class="loveBtnPanel">
 		<a id="fullScreenBtn" onClick="starsFullScreen()">全屏观看</a>
 	</div>
@@ -48,6 +51,7 @@
 		</div>
 	</div>
 	<canvas id="stars_animation">浏览器太垃圾不支持</canvas>
+	<embed　src="media/loveisyou.mp3"　autostart="true"　loop="true"　hidden="true"></embed>
 </body>
 	<script>
 		$(function() {
