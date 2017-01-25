@@ -3,7 +3,7 @@
 
 @section('content')
 
-@if(Auth::user() && Auth::user()->name === "云飞")
+@if(Auth::user() && preg_match('/'.Lang::get("love.mylover").'/', Auth::user()->name))
 <div class="col-md-8 col-md-offset-2">
 	<div class="container bg">
 	<div class="hometown">

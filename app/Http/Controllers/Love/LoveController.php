@@ -9,6 +9,12 @@ use App\Http\Controllers\Controller;
 
 class LoveController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('lover', []);
+    }
+
     /**
      * Display a listing of the resource.
      *
